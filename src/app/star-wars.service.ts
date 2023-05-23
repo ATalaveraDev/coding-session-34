@@ -12,4 +12,8 @@ export class StarWarsService {
   getCharacters() {
     return this.http.get('https://swapi.dev/api/people').pipe(map((data: any) => data.results));
   }
+
+  getCharacterDetails(url: string) {
+    return this.http.get(url);
+  }
 }

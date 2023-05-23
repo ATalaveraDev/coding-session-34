@@ -1,17 +1,23 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { mainAction } from './actions';
+
+import { setCharacterData } from './actions';
 
 export const mainFeatureKey = 'Main';
 
-export interface MainState { }
+export interface MainState {
+  characters: any[];
+}
 
-const initialState: MainState = {};
+const initialState: MainState = {
+  characters: []
+};
 
 const _mainReducer = createReducer(
   initialState,
-  on(mainAction, (state, action) => {
+  on(setCharacterData, (state, action) => {
     return {
-      ...state
+      ...state,
+      characters: [...state.characters].concat(action.data)
     };
   }),
 );
