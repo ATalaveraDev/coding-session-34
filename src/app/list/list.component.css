@@ -1,0 +1,8 @@
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 500px;
+  margin: auto;
+}

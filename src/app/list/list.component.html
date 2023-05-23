@@ -1,0 +1,7 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let character of (characters$ | async)" (click)="selectCharacterHandler(character)">
+      <span>{{ character.name }}</span>
+    </li>
+  </ul>
+</div>
