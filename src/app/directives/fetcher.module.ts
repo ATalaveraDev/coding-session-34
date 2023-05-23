@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { FetcherDirective } from './fetcher.directive.ts';
+import { FetcherDirective } from './fetcher.directive';
 
 @NgModule({
   imports: [],
