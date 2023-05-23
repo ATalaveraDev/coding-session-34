@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DetailsModule } from './modules/details/details.module';
 import { StarWarsService } from './star-wars.service';
-import { ListComponent } from './list/list.component';
+import { ListComponent } from './components/list/list.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { mainReducer } from './state';
+import { FetcherDirectiveModule } from './directives/fetcher.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { mainReducer } from './state';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    DetailsModule,
     StoreModule.forRoot({ Main: mainReducer }, {}),
-    EffectsModule.forRoot()
+    EffectsModule.forRoot(),
+    DetailsModule,
+    FetcherDirectiveModule
   ],
   providers: [StarWarsService],
   bootstrap: [AppComponent]

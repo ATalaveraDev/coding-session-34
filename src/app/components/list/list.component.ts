@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StarWarsService } from '../star-wars.service';
+import { StarWarsService } from '../../star-wars.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
