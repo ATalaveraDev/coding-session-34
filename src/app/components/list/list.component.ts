@@ -16,4 +16,8 @@ export class ListComponent {
   selectCharacterHandler(character: any) {
     this.router.navigateByUrl(`${character.name}`);
   }
+
+  fetchData(url: string) {
+
+  }
 }

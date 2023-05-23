@@ -1,6 +1,9 @@
 <div class="container">
   <ul>
-    <li *ngFor="let character of (characters$ | async)" (click)="selectCharacterHandler(character)">
+    <li *ngFor="let character of (characters$ | async)"
+        (click)="selectCharacterHandler(character)"
+        (fetcher)="fetchData(character.url)"
+        [prefetchMode]="['load']">
       <span>{{ character.name }}</span>
     </li>
   </ul>

@@ -6,7 +6,7 @@ declare var navigator: any;
   selector: '[fetcher]'
 })
 export class FetcherDirective implements OnInit {
-  @Input() prefecthMode: ('load' | 'hover')[] = ['hover'];
+  @Input() prefetchMode: ('load' | 'hover')[] = ['hover'];
   @Output() prefetch = new EventEmitter<void>();
 
   loaded = false;
@@ -14,14 +14,14 @@ export class FetcherDirective implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    if (this.prefecthMode.includes('load')) {
+    if (this.prefetchMode.includes('load')) {
       this.prefetchData();
     }
   }
 
   @HostListener('mouseenter')
   onMouseEnter() {
-    if (!this.loaded && this.prefecthMode.includes('hover')) {
+    if (!this.loaded && this.prefetchMode.includes('hover')) {
       this.loaded = true;
       this.prefetchData();
     }
