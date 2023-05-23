@@ -7,7 +7,7 @@ declare var navigator: any;
 })
 export class FetcherDirective implements OnInit {
   @Input() prefetchMode: ('load' | 'hover')[] = ['hover'];
-  @Output() prefetch = new EventEmitter<void>();
+  @Output() fetcher = new EventEmitter<void>();
 
   loaded = false;
 
@@ -31,6 +31,6 @@ export class FetcherDirective implements OnInit {
     if (navigator.connection.saveData) {
       return undefined;
     }
-    this.prefetch.emit();
+    this.fetcher.emit();
   }
 }
