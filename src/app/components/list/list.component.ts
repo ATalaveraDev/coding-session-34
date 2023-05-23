@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { StarWarsService } from '../../star-wars.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { getCharacterData } from 'src/app/state/actions';
 
 @Component({
   selector: 'app-list',
@@ -11,9 +13,13 @@ import { Router } from '@angular/router';
 export class ListComponent {
   characters$: Observable<any[]> = this.service.getCharacters();
 
-  constructor(private readonly service: StarWarsService, private readonly router: Router) { }
+  constructor(private readonly service: StarWarsService, private readonly router: Router, private readonly store: Store) { }
 
   selectCharacterHandler(character: any) {
     this.router.navigateByUrl(`${character.name}`);
+  }
+
+  fetcherHandler(url: string) {
+    this.store.dispatch(getCharacterData( { url }));
   }
 }

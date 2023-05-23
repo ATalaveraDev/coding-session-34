@@ -11,6 +11,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { mainReducer } from './state';
 import { FetcherDirectiveModule } from './directives/fetcher.module';
+import { MainEffects } from './state/effects';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { FetcherDirectiveModule } from './directives/fetcher.module';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({ Main: mainReducer }, {}),
-    EffectsModule.forRoot(),
+    EffectsModule.forRoot(MainEffects),
     DetailsModule,
     FetcherDirectiveModule
   ],
