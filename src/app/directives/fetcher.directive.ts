@@ -1,7 +1,5 @@
 import { Directive, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
-declare var navigator: any;
-
 @Directive({
   selector: '[fetcher]'
 })
