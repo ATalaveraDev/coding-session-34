@@ -28,9 +28,6 @@ export class FetcherDirective implements OnInit {
   }
 
   prefetchData(): void {
-    if (navigator.connection.saveData) {
-      return undefined;
-    }
     this.prefetch.emit();
   }
 }
